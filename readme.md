@@ -2,9 +2,8 @@
 
 > Helping you select an MV\* framework
 
-### [Website](http://todomvc.com)&nbsp;&nbsp;&nbsp;&nbsp;[Blog](http://blog.tastejs.com)&nbsp;&nbsp;&nbsp;&nbsp;[TasteJS](http://tastejs.com)
+### [Website](http://todomvc.com)&nbsp;&nbsp;&nbsp;&nbsp;[Blog](https://medium.com/@tastejs)&nbsp;&nbsp;&nbsp;&nbsp;[TasteJS](http://tastejs.com)
 
-[![Build Status](https://travis-ci.org/tastejs/todomvc.svg)](https://travis-ci.org/tastejs/todomvc)
 [![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://dashboard.cypress.io/#/projects/n4ynap/runs)
 
 Developers these days are spoiled with choice when it comes to selecting an MV\* framework for structuring and organizing JavaScript web apps.
@@ -13,6 +12,59 @@ Backbone, Ember, AngularJS... the list of new and stable solutions goes on and o
 
 To help solve this problem, we created TodoMVC - a project which offers the same Todo application implemented using MV* concepts in most of the popular JavaScript MV\* frameworks of today.
 
+## Table of Contents
+
+- [Team](#team)
+- [Disclaimer](#disclaimer)
+- [Getting Involved](#getting-involved)
+- [License](#license)
+
+## Project Structure
+
+The TodoMVC repository is organized as follows:
+
+- **`/examples`**: This directory contains the individual Todo application implementations for various MV* frameworks. Each framework has its own subdirectory (e.g., `/examples/react`, `/examples/angularjs`).
+  - Each framework subdirectory typically includes:
+    - `index.html`: The main HTML file for the app.
+    - `readme.md`: A framework-specific README with details about the implementation and how to run it.
+    - Source code files (JavaScript, CSS, etc.) organized according to the framework's conventions.
+    - `package.json`: (Often) Lists framework-specific dependencies.
+- **`/media`**: Contains images and other media assets used in the main README and website.
+- **`/tests`**: Includes automated tests for verifying the functionality of the Todo apps.
+- **`app-spec.md`**: The application specification document, outlining the required features and behavior for all TodoMVC apps.
+- **`contributing.md`**: Guidelines for contributing to the TodoMVC project.
+- **`codestyle.md`**: Code style guidelines for contributions.
+- **`readme.md`**: The main README file for the project (this file).
+
+## Quick Start
+
+To run a specific Todo app locally, follow these general steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/tastejs/todomvc.git
+   cd todomvc
+   ```
+
+2. **Navigate to the example directory:**
+   For example, to run the React app:
+   ```bash
+   cd examples/react
+   ```
+
+3. **Install dependencies:**
+   Most examples use npm for dependency management.
+   ```bash
+   npm install
+   ```
+   (Some older apps might use Bower, or have dependencies included directly. Check the framework-specific `readme.md` in its directory for detailed instructions.)
+
+4. **Run the app:**
+   Typically, you can open the `index.html` file in your browser. Some apps might have a specific command to start a development server (e.g., `npm start`). Again, refer to the framework-specific `readme.md`.
+
+   For the React example, after `npm install`, you can usually open the `index.html` (or `dist/index.html` if a build step is mentioned in its readme) directly in your browser. Many modern JavaScript examples might also provide an `npm start` script.
+
+**Note:** Always refer to the `readme.md` file within each example's directory (e.g., `examples/react/readme.md`) for specific instructions, as setup can vary between frameworks.
 
 ## Team
 
@@ -21,7 +73,7 @@ TodoMVC would not be possible without a strong team of [contributors](https://gi
 #### [Addy Osmani](https://github.com/addyosmani) - Founder/Lead
 
 <img align="left" width="40" height="40" src="https://avatars.githubusercontent.com/u/110953?v=4&s=40">
-  Addy is a Software Engineer at Google who originally created TodoMVC. He oversees the project direction, maintenance and organizes the planning and development efforts of the team.
+Addy is a Software Engineer at Google who originally created TodoMVC. He oversees the project direction, maintenance and organizes the planning and development efforts of the team.
 
 #### [Sindre Sorhus](https://github.com/sindresorhus) - Lead Developer
 
@@ -53,7 +105,7 @@ Sam is a Software Engineer at Google who is driven by an endless desire to creat
 <img align="left" width="40" height="40" src="https://avatars.githubusercontent.com/u/6025224?v=4&s=40">
 Arthur is an open-source fanboy from Belgium. He is passionate about developer tooling and all things JavaScript.
 
-#### [Fady Samir Sadek](https://github.com/FadySamirSadek) - Developer
+#### [Fady Fahim](https://github.com/FadySamirSadek) - Developer
 
 <img align="left" width="40" height="40" src="https://avatars.githubusercontent.com/u/7483806?v=4&s=40">
 Fady is a front-end developer who loves all things JavaScript and enjoys solving real world problems using the web platform and helping other developers do the same. He currently leads maintenance of the project and ensures that the project is friendly for new contributors and upcoming developers.
@@ -65,7 +117,7 @@ Gianni is a programmer and designer currently working as the Chief Rigger at Met
 
 ## Disclaimer
 
-<img align="right" width="230" height="230" src="media/icon-small.png">
+<img width="230" height="230" src="media/icon-small.png">
 
 TodoMVC has been called many things including the 'Speed-dating' and 'Rosetta Stone' of MV\* frameworks. Whilst we hope that this project can offer assistance in deciding what frameworks are worth spending more time looking at, remember that the Todo application offers a limited view of a framework's potential capability.
 
@@ -83,6 +135,6 @@ Check out our [contribution docs](contributing.md) for more info.
 
 ## License
 
-Everything in this repo is MIT License unless otherwise specified.
+Everything in this repo is [MIT Licensed](license.md) unless otherwise specified.
 
-[MIT](license.md) © Addy Osmani, Sindre Sorhus, Pascal Hartig, Stephen Sawchuk.
+© Addy Osmani, Sindre Sorhus, Pascal Hartig, Stephen Sawchuk.
