@@ -31,7 +31,7 @@ export function Main({ todos, dispatch }) {
                 <div className="toggle-all-container">
                     <input className="toggle-all" type="checkbox" id="toggle-all" data-testid="toggle-all" checked={visibleTodos.every((todo) => todo.completed)} onChange={toggleAll} />
                     <label className="toggle-all-label" htmlFor="toggle-all">
-                        Toggle All Input
+                        toggle All Input
                     </label>
                 </div>
             ) : null}
