@@ -20,9 +20,7 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies (skip optional)
-        run: |
-          npm config set optional false
-          npm install --legacy-peer-deps --no-optional
+        run: npm install --legacy-peer-deps --omit=optional
         env:
           NODE_OPTIONS: --max-old-space-size=4096
       
