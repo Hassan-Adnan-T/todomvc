@@ -32,17 +32,17 @@ jobs:
       - name: Install Cypress
         run: npx cypress install
       
-      - name: Start the application
+      - name: Start the application on port 3000
         run: |
           cd examples/react
-          npm start &
-          sleep 15
+          PORT=3000 npm start &
+          npx wait-on http://localhost:3000
         env:
           CI: true
       
       - name: Run Cypress tests
         run: |
           cd examples/react
-          npx cypress run --headless --config baseUrl=http://localhost:8080
+          npx cypress run --headless --config baseUrl=http://localhost:3000
         env:
           CI: true
