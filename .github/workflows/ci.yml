@@ -34,12 +34,15 @@ jobs:
       
       - name: Start the application
         run: |
+          cd examples/react
           npm start &
-          sleep 10
+          sleep 15
         env:
           CI: true
       
       - name: Run Cypress tests
-        run: npx cypress run --headless
+        run: |
+          cd examples/react
+          npx cypress run --headless --config baseUrl=http://localhost:8080
         env:
           CI: true
