@@ -19,8 +19,13 @@ jobs:
           node-version: '18'
           cache: 'npm'
       
-      - name: Install dependencies (skip optional)
-        run: npm install --legacy-peer-deps --omit=optional
+      - name: Remove old lockfile and node_modules
+        run: |
+          rm -f package-lock.json
+          rm -rf node_modules
+      
+      - name: Install dependencies (bypass PhantomJS)
+        run: npm install --legacy-peer-deps --omit=optional --ignore-scripts
         env:
           NODE_OPTIONS: --max-old-space-size=4096
       
