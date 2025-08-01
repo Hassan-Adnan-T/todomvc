@@ -1,4 +1,4 @@
-name : CI React
+name: CI React
 
 on:
   push:
@@ -11,15 +11,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
       
-      - name: Install dependencies
-        run: npm install
-
+      - name: Install dependencies (skip optional)
+        run: |
+          npm config set optional false
+          npm install --legacy-peer-deps --no-optional
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+      
+      - name: Install Cypress
+        run: npx cypress install
+      
+      - name: Start the application
+        run: |
+          npm start &
+          sleep 10
+        env:
+          CI: true
+      
       - name: Run Cypress tests
-        run: npx cypress run
+        run: npx cypress run --headless
+        env:
+          CI: true
